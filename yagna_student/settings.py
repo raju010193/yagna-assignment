@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'yagna_student.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dd3h25gs1dpej',
         'HOST':'ec2-75-101-142-91.compute-1.amazonaws.com',
         'PORT':'5432',
