@@ -23,7 +23,8 @@ class UserSerialization(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            "id", "username", 'password', 'email', 'firstname', 'lastname')
+            "id", "username", 'password', 'email')
+
 
 class Course(models.Model):
     title = models.CharField(max_length=50)
@@ -38,12 +39,13 @@ class Course(models.Model):
 
     def update_course_availabilty(self, course):
         try:
-            course = Course.objects.get(id=course)
+            course = Course.objects.get(id=course.id)
             course.isAvailable = False
             course.save()
             return True
         except Exception as e:
             return False
+
     def get_course(self, course_id):
         try:
             return Course.objects.get(id=course_id)
@@ -54,7 +56,7 @@ class Course(models.Model):
 class CourseSerialization(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ("title", "courseDetails", "days","author")
+        fields = ("title", "courseDetails", "days", "author")
 
 
 class EnrollCourse(models.Model):
@@ -67,11 +69,10 @@ class EnrollCourse(models.Model):
 
     def check_course_avaialbility(self, course):
         try:
-            if EnrollCourse.objects.filter(course=course).count() < settings.EACH_COURSE_ENROLL:
-                return True
-
-            Course.update_course_availabilty(course)
+            if EnrollCourse.objects.filter(course=course).count() == settings.EACH_COURSE_ENROLL:
+                Course().update_course_availabilty(course)
             return False
+            return Course.objects.get(id=course.id).isAvailable
         except Exception as e:
             return False
 
@@ -84,7 +85,7 @@ class EnrollCourse(models.Model):
 
     def enroll_course(self, course, student):
         try:
-            if self.check_user_already_enrolled_not(course,student):
+            if self.check_user_already_enrolled_not(course, student):
                 if self.check_course_avaialbility(course):
                     self.student = student
                     self.course = course
@@ -95,7 +96,7 @@ class EnrollCourse(models.Model):
         except Exception as e:
             return status.HTTP_400_BAD_REQUEST
 
-    def get_enrolled_course_by_user(self,student):
+    def get_enrolled_course_by_user(self, student):
         try:
             return EnrollCourse.objects.filter(student=student).values()
         except Exception as e:

@@ -1,0 +1,7 @@
+Django==1.10
+djangorestframework
+logger==1.4
+raven
+psycopg2-binary
+urllib3
+whitenoise==3.2

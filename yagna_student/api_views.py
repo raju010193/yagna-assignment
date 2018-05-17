@@ -21,9 +21,10 @@ class Register(APIView):
                         return Response(serializer.errors, status=status.HTTP_201_CREATED)
                     return Response(serializer.error_messages, status=status.HTTP_204_NO_CONTENT)
                 return Response(serializer.errors, status=status.HTTP_207_MULTI_STATUS)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            print e
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class Login(APIView):
