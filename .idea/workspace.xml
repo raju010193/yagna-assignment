@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d01306-0f0d-4e43-95a3-617cad82cb37" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/admin_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/admin_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/api_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,11 +37,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yagna_student/admin_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="241">
+              <caret line="22" column="82" lean-forward="true" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -98,15 +100,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://E:/writehere/django_env/write_env/Lib/site-packages/django/core/handlers/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="218" selection-start-line="218" selection-end-line="218" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="exception.py" pinned="false" current-in-tab="false">
         <entry file="file://E:/writehere/django_env/write_env/Lib/site-packages/django/core/handlers/exception.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -146,12 +139,12 @@
         <option value="$PROJECT_DIR$/yagna_student/wsgi.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/yagna_student/settings.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/yagna_student/models.py" />
         <option value="$PROJECT_DIR$/yagna_student/api_views.py" />
         <option value="$PROJECT_DIR$/yagna_student/urls.py" />
         <option value="$PROJECT_DIR$/yagna_student/utils.py" />
         <option value="$PROJECT_DIR$/yagna_student/admin_views.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -532,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -630,11 +616,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yagna_student/admin_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="241">
+          <caret line="22" column="82" lean-forward="true" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
