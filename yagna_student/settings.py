@@ -24,7 +24,7 @@ SECRET_KEY = '*)a-=nlhcu@vp$u=4#6yin@gmdaf9)&+m=yk1m-*(6^(zumkl&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:8000']
+ALLOWED_HOSTS = ['lms-yagna.herokuapp.com']
 
 # Application definition
 

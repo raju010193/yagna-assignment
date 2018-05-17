@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d01306-0f0d-4e43-95a3-617cad82cb37" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yagna_student/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
@@ -88,6 +88,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yagna_student/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,15 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="122">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deprecation.py" pinned="false" current-in-tab="false">
-        <entry file="file://E:/writehere/django_env/write_env/Lib/site-packages/django/utils/deprecation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
         </entry>
@@ -138,13 +138,13 @@
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/yagna_student/wsgi.py" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/yagna_student/settings.py" />
         <option value="$PROJECT_DIR$/yagna_student/models.py" />
         <option value="$PROJECT_DIR$/yagna_student/api_views.py" />
         <option value="$PROJECT_DIR$/yagna_student/urls.py" />
         <option value="$PROJECT_DIR$/yagna_student/utils.py" />
         <option value="$PROJECT_DIR$/yagna_student/admin_views.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/yagna_student/settings.py" />
       </list>
     </option>
   </component>
@@ -518,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -628,6 +621,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
     </entry>
