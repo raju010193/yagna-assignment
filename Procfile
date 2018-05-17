@@ -1,0 +1,1 @@
+web: gunicorn yagna_student.wsgi --log-file -

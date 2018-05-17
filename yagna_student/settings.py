@@ -82,7 +82,11 @@ WSGI_APPLICATION = 'yagna_student.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'dd3h25gs1dpej',
+        'HOST':'ec2-75-101-142-91.compute-1.amazonaws.com',
+        'PORT':'5432',
+        'USER':'kcgcqajvgndyrq',
+        'PASSWORD':'0378031a4ed55fecf00c936f01ea0fdd557039e628c528ee264ed8cc05c7172d',
     }
 }
 
