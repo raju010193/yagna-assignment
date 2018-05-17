@@ -71,7 +71,7 @@ class EnrollCourse(models.Model):
         try:
             if EnrollCourse.objects.filter(course=course).count() == settings.EACH_COURSE_ENROLL:
                 Course().update_course_availabilty(course)
-            return False
+                return False
             return Course.objects.get(id=course.id).isAvailable
         except Exception as e:
             return False
@@ -98,6 +98,12 @@ class EnrollCourse(models.Model):
 
     def get_enrolled_course_by_user(self, student):
         try:
-            return EnrollCourse.objects.filter(student=student).values()
+            course = list()
+            enroll = EnrollCourse.objects.filter(student=student)
+            if enroll:
+                for each_course in enroll:
+                    each = Course().get_course(each_course.course.id)
+                    course.append({"id":each.id,"title":each.title,"days":each.days,"author":each.author,"courseDetails":each.courseDetails})
+            return course
         except Exception as e:
             return None

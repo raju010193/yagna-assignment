@@ -27,7 +27,7 @@ class AdminCourseManagement(APIView):
     def delete(self, request):
         try:
             if request.user.is_authenticated and request.user.is_superuser:
-                course_info = Course.objects.get(id=request.data.get('id'))
+                course_info = Course.objects.get(id=request.data.get('courseId'))
                 course_info.delete()
                 return Response(status=status.HTTP_200_OK)
             return Response(status=status.HTTP_403_FORBIDDEN)
@@ -36,10 +36,10 @@ class AdminCourseManagement(APIView):
 
     def get(self, request):
         try:
-            if request.user.is_authenticated:
-                course_details = Course.objects.all().values()
-                return Response(course_details, status=status.HTTP_200_OK)
-            return Response(status=status.HTTP_403_FORBIDDEN)
+
+            course_details = Course.objects.all().values()
+            return Response(course_details, status=status.HTTP_200_OK)
+
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
@@ -49,8 +49,8 @@ class AdminManagedbyStudent(APIView):
     def delete(self, request):
         try:
             if request.user.is_authenticated and request.user.is_superuser:
-                status_code = UserManagement().delete_course_to_student(request.data.get('user_id'),
-                                                                        request.data.get("course_id"))
+                status_code = UserManagement().delete_course_to_student(request.data.get('enrollId'))
+
                 return Response(status=status_code)
             return Response(status=status.HTTP_403_FORBIDDEN)
         except Exception as e:
@@ -65,12 +65,13 @@ class AdminManagedbyStudent(APIView):
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
 class GetAllStudents(APIView):
-    def get(self,request):
+    def get(self, request):
         try:
             if request.user.is_authenticated and request.user.is_superuser:
                 get_all_students = UserManagement().get_all_students()
-                return Response(get_all_students,status=status.HTTP_200_OK)
+                return Response(get_all_students, status=status.HTTP_200_OK)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
@@ -80,7 +81,7 @@ class RemoveStudent(APIView):
     def delete(self, request):
         try:
             if request.user.is_authenticated and request.user.is_superuser:
-                status_code = UserManagement().delete_student(request.data.get('user_id'))
+                status_code = UserManagement().delete_student(request.data.get('studentId'))
                 return Response(status=status_code)
             return Response(status=status.HTTP_403_FORBIDDEN)
         except Exception as e:

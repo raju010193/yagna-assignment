@@ -23,7 +23,6 @@ class Register(APIView):
                 return Response(serializer.errors, status=status.HTTP_207_MULTI_STATUS)
             return Response(status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            print e
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -65,9 +64,9 @@ class CheckUserLogin(APIView):
 class ChangePassword(APIView):
     def put(self, request):
         if request.user.is_authenticated:
-            new_password = request.data.get("new_password")
+            new_password = request.data.get("newPassword")
             username = request.user.username
-            old_password = request.data.get("old_password")
+            old_password = request.data.get("oldPassword")
             try:
                 user = authenticate(username=username, password=old_password, type='user')
                 if user:
@@ -76,7 +75,8 @@ class ChangePassword(APIView):
                     update_password.save()
                     user = authenticate(username=username, password=new_password, type='user')
                     login(request, user)
-                    return Response(status=status.HTTP_200_OK)
+                    token = Token.objects.get(user=user)
+                    return Response({"token":token.key},status=status.HTTP_200_OK)
                 else:
                     return Response(status=status.HTTP_401_UNAUTHORIZED)
             except Exception as e:
@@ -86,10 +86,10 @@ class ChangePassword(APIView):
 
 
 class StudentCourseManagement(APIView):
-    def post(self, request):
+    def put(self, request):
         try:
             if request.user.is_authenticated:
-                course = Course().get_course(request.data.get("course_id"))
+                course = Course().get_course(request.data.get("courseId"))
                 if course is not None:
                     status_code = EnrollCourse().enroll_course(course,request.user)
                 return Response(status=status_code)

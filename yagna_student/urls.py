@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from yagna_student.api_views import Register, Login, LogoutUser, CheckUserLogin, ChangePassword, StudentCourseManagement
-from yagna_student.admin_views import AdminCourseManagement, AdminManagedbyStudent,RemoveStudent
+from yagna_student.admin_views import AdminCourseManagement, AdminManagedbyStudent,RemoveStudent, GetAllStudents
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,10 +27,11 @@ urlpatterns = [
     url(r'^api/accounts/change-password/', ChangePassword.as_view()),
     url(r'^api/admin/add-course/', AdminCourseManagement.as_view()),
     url(r'^api/admin/remove-course/', AdminCourseManagement.as_view()),
-    url(r'^api/get-all', AdminCourseManagement.as_view()),
+    url(r'^api/get-all/', AdminCourseManagement.as_view()),
     url(r'^api/student/enroll-course/', StudentCourseManagement.as_view()),
     url(r'^api/student/get-enroll-courses-by-student/', StudentCourseManagement.as_view()),
     url(r'^api/admin/remove-student-course/', AdminManagedbyStudent.as_view()),
     url(r'^api/admin/remove-student/', RemoveStudent.as_view()),
     url(r'^api/admin/get-enrolled-students/', AdminManagedbyStudent.as_view()),
+    url(r'^api/admin/get-students/',GetAllStudents.as_view()),
 ]
