@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d01306-0f0d-4e43-95a3-617cad82cb37" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/admin_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/admin_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/api_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yagna_student/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yagna_student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yagna_student/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yagna_student/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
@@ -106,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="93" column="9" selection-end-line="224" />
+            <state relative-caret-position="137">
+              <caret line="86" column="55" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="86" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -799,13 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="93" column="9" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yagna_student/admin_views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
@@ -843,6 +830,13 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yagna_student/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="86" column="55" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="86" selection-end-column="55" />
         </state>
       </provider>
     </entry>
