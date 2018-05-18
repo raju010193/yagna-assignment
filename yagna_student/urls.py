@@ -34,4 +34,5 @@ urlpatterns = [
     url(r'^api/admin/remove-student/', RemoveStudent.as_view()),
     url(r'^api/admin/get-enrolled-students/', AdminManagedbyStudent.as_view()),
     url(r'^api/admin/get-students/',GetAllStudents.as_view()),
+    url(r'^api/admin/add-to-course/',AdminCourseManagement.as_view())
 ]

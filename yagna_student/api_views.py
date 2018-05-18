@@ -13,15 +13,13 @@ from django.contrib.auth import authenticate, login, logout
 class Register(APIView):
     def post(self, request):
         try:
-            serializer = UserSerialization(data=request.data)
-            if serializer.is_valid():
-                if UserManagement().already_exists(request.data.get("username")):
-                    user = UserManagement().save_user(request.data)
-                    if user is not None:
-                        return Response(serializer.errors, status=status.HTTP_201_CREATED)
-                    return Response(serializer.error_messages, status=status.HTTP_204_NO_CONTENT)
-                return Response(serializer.errors, status=status.HTTP_207_MULTI_STATUS)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+            if UserManagement().already_exists(request.data.get("username")):
+                user = UserManagement().save_user(request.data)
+                if user is not None:
+                    return Response(status.HTTP_201_CREATED,status=status.HTTP_201_CREATED)
+                return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(status=status.HTTP_207_MULTI_STATUS)
         except Exception as e:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -37,7 +35,8 @@ class Login(APIView):
             token = Token.objects.get(user=user)
 
             return Response(
-                {"user": {"id": user.id, "username": user.username, "email": user.email, "is_superuser":user.is_superuser,"token": token.key}},
+                {"user": {"id": user.id, "username": user.username, "email": user.email,
+                          "is_superuser": user.is_superuser, "token": token.key}},
                 status=status.HTTP_200_OK)
         except Exception as e:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -47,18 +46,18 @@ class LogoutUser(APIView):
     def get(self, request):
         try:
             logout(request)
-            return Response(status=status.HTTP_200_OK)
+            return Response(status.HTTP_200_OK,status=status.HTTP_200_OK)
         except Exception as e:
-            return Response({"result": "error"}, 500)
+            return Response({"result": "error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class CheckUserLogin(APIView):
     def get(self, request):
         try:
-            email = request.user.email
-            return Response({"success": email}, 200)
+            username = request.user.username
+            return Response({"success": username},status=status.HTTP_200_OK)
         except:
-            return Response({"error": "user is not logged in"}, 500)
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class ChangePassword(APIView):
@@ -76,7 +75,7 @@ class ChangePassword(APIView):
                     user = authenticate(username=username, password=new_password, type='user')
                     login(request, user)
                     token = Token.objects.get(user=user)
-                    return Response({"token":token.key},status=status.HTTP_200_OK)
+                    return Response({"token": token.key}, status=status.HTTP_200_OK)
                 else:
                     return Response(status=status.HTTP_401_UNAUTHORIZED)
             except Exception as e:
@@ -91,16 +90,19 @@ class StudentCourseManagement(APIView):
             if request.user.is_authenticated:
                 course = Course().get_course(request.data.get("courseId"))
                 if course is not None:
-                    status_code = EnrollCourse().enroll_course(course,request.user)
+                    status_code = EnrollCourse().enroll_course(course, request.user)
+                    if status_code is status.HTTP_200_OK:
+                        return Response(status_code,status=status_code)
                 return Response(status=status_code)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-    def get(self,request):
+
+    def get(self, request):
         try:
             if request.user.is_authenticated:
                 course_details = EnrollCourse().get_enrolled_course_by_user(request.user)
-                return Response(course_details,status=status.HTTP_200_OK)
+                return Response(course_details, status=status.HTTP_200_OK)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
