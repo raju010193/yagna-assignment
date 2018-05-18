@@ -90,6 +90,7 @@ class EnrollCourse(models.Model):
                     self.student = student
                     self.course = course
                     self.save()
+                    self.check_course_avaialbility()
                     return status.HTTP_200_OK
                 return status.HTTP_306_RESERVED
             return status.HTTP_207_MULTI_STATUS

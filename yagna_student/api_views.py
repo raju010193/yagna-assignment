@@ -96,7 +96,7 @@ class StudentCourseManagement(APIView):
                 return Response(status=status_code)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def get(self, request):
         try:
@@ -105,4 +105,4 @@ class StudentCourseManagement(APIView):
                 return Response(course_details, status=status.HTTP_200_OK)
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         except Exception as e:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
