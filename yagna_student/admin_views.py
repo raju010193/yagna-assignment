@@ -37,7 +37,7 @@ class AdminCourseManagement(APIView):
     def get(self, request):
         try:
 
-            course_details = Course.objects.all().values()
+            course_details = Course.objects.all().order_by('-id').values()
             return Response(course_details, status=status.HTTP_200_OK)
 
         except Exception as e:
