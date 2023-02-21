@@ -1,0 +1,14 @@
+site_name: Newsento
+nav:
+  - Home: index.md
+  - Yagna: yagna.md
+plugins:
+- mkdocstrings:
+    enabled: !ENV [ ENABLE_MKDOCSTRINGS, true ]
+    default_handler: python
+    handlers:
+      python:
+        options:
+          show_submodules: true
+          selection_opt: true
+          rendering_opt: "value"
