@@ -1,7 +1,7 @@
 site_name: Newsento
 nav:
   - Home: index.md
-  - Yagna: yagna.md
+  - Docs: yagna.md
 plugins:
 - mkdocstrings:
     enabled: !ENV [ ENABLE_MKDOCSTRINGS, true ]
