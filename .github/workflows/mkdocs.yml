@@ -4,8 +4,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: check
-        uses: EndBug/version-check@v2
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
