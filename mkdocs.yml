@@ -1,10 +1,10 @@
 site_name: Sample
-title: Sample
 site_description: Sample project
 site_author: MP Swamy
-date: Jan 01,2023
 theme:
   name: "material"
+  palette:
+    scheme: default
 nav:
   - Home: index.md
   - Docs: yagna.md
