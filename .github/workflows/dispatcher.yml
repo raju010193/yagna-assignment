@@ -1,7 +1,7 @@
 name: repo dispatcher tigger
 on: [push, pull_request]
 jobs:
-  - tests-functional:
+   tests-functional:
       runs-on: ubuntu-latest
       steps:
         - name: repo dispatch
