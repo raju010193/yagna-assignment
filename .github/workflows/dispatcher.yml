@@ -7,7 +7,7 @@ jobs:
         - name: repo dispatch
           uses: peter-evans/repository-dispatch@v2
           with:
-            token: ${{secrets.G_NEWSENTO_TOKEN}}
+            token: ${{ secrets.G_NEWSENTO_TOKEN }}
             repository: raju010193/newsento_api
             event-type: my-event
             client-payload: '{"data":"Hello World"}'
