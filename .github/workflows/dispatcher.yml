@@ -1,0 +1,13 @@
+name: repo dispatcher tigger
+on: [push, pull_request]
+jobs:
+   tests-functional:
+      runs-on: ubuntu-latest
+      steps:
+        - name: repo dispatch
+          uses: peter-evans/repository-dispatch@v2
+          with:
+            token: ${{ secrets.G_NEWSENTO_TOKEN }}
+            repository: raju010193/newsento_api
+            event-type: my-event
+            client-payload: '{"data":"Hello World"}'

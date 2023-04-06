@@ -1,4 +1,10 @@
-site_name: Newsento
+site_name: Sample
+site_description: Sample project
+site_author: MP Swamy
+theme:
+  name: "material"
+  palette:
+    scheme: default
 nav:
   - Home: index.md
   - Docs: yagna.md
